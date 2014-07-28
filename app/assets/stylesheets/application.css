@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+html {
+	height: 1000px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
 nav {
 	margin-bottom: 10px;
 }
@@ -28,4 +39,11 @@ nav {
 #navMenu > li{
 	display: inline-block;
 	margin-right: 20px;
+}
+
+#map-canvas {
+	border-radius: 7px;
+	margin: 0 auto;
+	height: 33.3333333%;
+	width: 33.3333333%
 }
