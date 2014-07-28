@@ -31,3 +31,23 @@
 <br>
 
 <%= link_to 'New Location', new_location_path %>
+
+<div id="map-canvas"></div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+  (function(window, google) {
+
+    // map options
+    var options = {
+      center: {
+        lat: 40.708036,
+        lng: -74.006261
+      },
+      zoom: 10
+    },
+    element = document.getElementById("map-canvas"),
+    // map
+    map = new google.maps.Map(element, options);
+
+  }(window, google));
+</script>
