@@ -42,6 +42,7 @@ nav {
 }
 
 #map-canvas {
+	border-radius: 7px;
 	margin: 0 auto;
 	height: 33.3333333%;
 	width: 33.3333333%

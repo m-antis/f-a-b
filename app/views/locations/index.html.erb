@@ -43,7 +43,13 @@
         lat: 40.708036,
         lng: -74.006261
       },
-      zoom: 10
+      disableDefaultUI: false,
+      zoom:10,
+      minZoom:10,
+      maxZoom:19,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.DEFAULT
+      }
     },
     element = document.getElementById("map-canvas"),
     // map
