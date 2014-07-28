@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FindABin</title>
+  <title>Find-A-Bin</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+<nav>
+	<div id="navLogo">Find-A-Bin</div>
+
+	<ul id="navMenu">
+		<li><%= link_to 'Mission', mission_path %></li>
+		<li><a href="#">Locations</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><%= link_to 'Add Bin Location', new_location_path %></li>
+	</ul>
+	
+</nav>
 
 <%= yield %>
 
