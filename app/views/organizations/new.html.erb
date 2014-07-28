@@ -1,0 +1,46 @@
+<h1>Add New Org</h1>
+<br/>
+
+	<% if notice %> <p id="notice" class="x"><%= notice %> </p> <% end %>
+	<% if alert %><p id="alert" class="x"><%= alert %></p> <% end %>
+
+
+<%= form_for(@org) do |f| %>
+ <% if @org.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@org.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @org.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+	<%= radio_button_tag(:for_profit?, "true") %>
+	<%= label_tag(:for_profit, "This org is for-profit.") %><br/>
+	<%= radio_button_tag(:for_profit?, "false") %>
+	<%= label_tag(:not_for_profit, "This org is not-for-profit.") %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br>
+    <%= f.text_field :telephone %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Org" %>
+  </div>
+<% end %>

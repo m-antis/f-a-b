@@ -61,9 +61,9 @@ class LocationsController < ApplicationController
     end
   end
 
-  def mission
-  end
-  
+  # def mission
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location
@@ -72,6 +72,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:address, :zipcode, :state, :city, :organization_id_id)
+      params.require(:location).permit(:address, :zipcode, :state, :city, :organization_id)
     end
 end

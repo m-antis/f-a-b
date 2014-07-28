@@ -13,12 +13,14 @@
 
 	<ul id="navMenu">
 		<li><%= link_to 'Mission', mission_path %></li>
-		<li><a href="#">Locations</a></li>
-		<li><a href="#">Contact</a></li>
+		<li><%= link_to 'Locations', root_path %></li>
+		<li><%= link_to 'Contact', contact_path %></li>
 		<li><%= link_to 'Add Bin Location', new_location_path %></li>
+		<li> <%= link_to 'Add New Org', new_organization_path %></li>
 	</ul>
 	
 </nav>
+
 
 <%= yield %>
 
