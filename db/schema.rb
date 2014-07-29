@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140728193554) do
+ActiveRecord::Schema.define(version: 20140729160730) do
 
   create_table "locations", force: true do |t|
     t.string   "address"
@@ -32,5 +32,17 @@ ActiveRecord::Schema.define(version: 20140728193554) do
     t.boolean  "for_profit?"
     t.string   "email"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.integer  "organization_id"
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["organization_id"], name: "index_users_on_organization_id"
 
 end
