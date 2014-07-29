@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
 
+  # get 'users/new'
+
+  resources :users
   resources :locations
   resources :organizations, except: [:index, :show,]
-
+  resources :sessions, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'locations#index'
-  
+  match '/users/new', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
+
   get 'mission' =>'locations#mission'
 
   get 'contact' => 'locations#contact'
