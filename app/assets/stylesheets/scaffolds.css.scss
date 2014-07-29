@@ -1,17 +1,23 @@
+$main-color: #37C6BB;
+// $main-color: #00D7D1;
+// above color is light teal
+// $main-color: #00D786;
+// $main-color: #34B556; 
+// green color
+
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Open Sans', verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
-  margin: 10px;
+  // line-height: 18px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+// p, ol, ul, td {
+//   font-family: 'Open Sans', verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+// }
 
 // pre {
 //   background-color: #eee;
@@ -20,10 +26,10 @@ p, ol, ul, td {
 // }
 
 a {
-  color: #000;
+  color: $main-color;
   text-decoration: none;
   &:visited {
-    color: #000;
+    color: $main-color;
   }
   &:hover {
     text-decoration: underline;

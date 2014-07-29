@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
   resources :locations
   resources :organizations, except: [:index, :show,]
-=======
 
->>>>>>> 64194e04ff59a75b801b6771c2a8b1fede3e6312
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

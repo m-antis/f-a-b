@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$main-color: #37C6BB;
+
+// green color:
+// $main-color: #00D786;
+
+
+* {
+margin: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+	}
+.footer, .push {
+	height: 4em;
+	clear: both;
+	line-height: 18px;
+	}
+
+#navbar {
+	/*padding-bottom: 20px;*/
+	// background-color: #6BA3A3;
+	background-color: #2C2C2C;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	color: $main-color;
+
+}
+
+#navLogo {
+	position: relative;
+	top: 7px;
+	padding-left: 15px;
+	font-size: 30px;
+	font-family: 'Comfortaa', sans-serif;
+}
+
+#navMenu {
+	position: relative;
+	top: -15px;
+	text-align: right;
+	font-family: 'Open Sans', sans-serif;	
+	font-size: 14px;
+	li {
+		display: inline-block;
+		margin-right: 14px;
+		border-bottom: 1px solid $main-color;
+		padding-bottom: 5px;
+	}
+	li:hover {
+		border-bottom: none;
+	}
+	a:hover{
+		text-decoration: none;
+		color: white;
+	}
+}
+
+
+#map-canvas {
+	position: relative;
+	top: 30px;
+	border-radius: 7px;
+	margin: 0 auto;
+	height: 300px;
+	width: 600px;
+}
+
+#mainWrapper {
+	margin: 15px 10px 0px 10px;
+	// margin-left: 10px;
+	// margin-right: 10px;
+
+}
+
+#missionWrapper {
+	width: 500px;
+	margin: 0 auto;
+
+	h2 {
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	p {
+		margin-bottom: 20px;
+	}
+}
+
+

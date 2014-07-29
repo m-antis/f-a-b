@@ -5,24 +5,34 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
+<link href='http://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<nav>
-	<div id="navLogo">Find-A-Bin</div>
+<div class="wrapper">
+	<div id="navbar">
+		<div id="navLogo">Find-A-Bin</div>
 
-	<ul id="navMenu">
-		<li><%= link_to 'Mission', mission_path %></li>
-		<li><%= link_to 'Locations', root_path %></li>
-		<li><%= link_to 'Contact', contact_path %></li>
-		<li><%= link_to 'Add Bin Location', new_location_path %></li>
-		<li> <%= link_to 'Add New Org', new_organization_path %></li>
-	</ul>
+		<ul id="navMenu">
+			<li><%= link_to 'Mission', mission_path %></li>
+			<li><%= link_to 'Locations', root_path %></li>
+			<li><%= link_to 'Contact', contact_path %></li>
+			<li><%= link_to 'Add Bin Location', new_location_path %></li>
+			<li> <%= link_to 'Add New Org', new_organization_path %></li>
+		</ul>
 
-</nav>
+	</div>
 
+<div id="mainWrapper">
+	<%= yield %>
 
-<%= yield %>
+</div>
+<div class="push"></div>
+</div>
 
+<div class="footer">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit tempore, nulla <a href="#">labore obcaecati </a>commodi qui similique mollitia ad itaque nisi aliquam error quidem quas fugiat!
+
+</div>
 </body>
 </html>
