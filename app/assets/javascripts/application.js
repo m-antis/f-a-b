@@ -18,15 +18,28 @@
 
 $(document).on('ready page:load', function(){
 
- (function(window, google, mapster) {
+ (function(window, mapster) {
 
     // map options
     var options = mapster.MAP_OPTIONS,
     element = document.getElementById("map-canvas"),
     // map
-    map = new google.maps.Map(element, options);
+    map = mapster.create(element, options);
 
-  }(window, google, window.Mapster || (window.Mapster = {})));
+    var marker = map.addMarker({
+    	lat: 40.708036,
+    	lng: -74.006261,
+    	content: "huzzah!"
+    	// custom options:
+    	// org_id: 1,
+    	// icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-5ec8bd/shapecolor-color/shadow-1/border-black/symbolstyle-contrast/symbolshadowstyle-no/gradient-no/clothers_male.png'
+    });
+
+    
+
+
+
+  }(window, window.Mapster || (window.Mapster = {})));
 
 
 
