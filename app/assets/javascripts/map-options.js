@@ -12,6 +12,7 @@ $(document).on('ready page:load', function(){
       zoom:10,
       minZoom:10,
       maxZoom:19,
+      geocoder: true,
       zoomControlOptions: {
         position: google.maps.ControlPosition.DEFAULT
       },
