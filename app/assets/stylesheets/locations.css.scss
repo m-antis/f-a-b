@@ -1,3 +1,25 @@
 // Place all the styles related to the Locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#form-wrap {
+   padding-top: 40px;
+   width: 400px;
+   margin: 0 auto;
+
+   #org-wrap {
+      padding-left:75px;
+   }
+
+   #input-wrap {
+      padding-left: 75px;
+   }
+h1 {
+   text-align: center;
+}
+   input {
+      width: 250px;
+      height: 20px;
+      font-size: 12pt;
+   }
+}

@@ -29,6 +29,7 @@ html {
 }
 
 body {
+	background-color:#f9f9f9;
 	width: 100%;
 	height: 100%;
 }
@@ -43,13 +44,19 @@ body {
 	height: 4em;
 	clear: both;
 	line-height: 18px;
+	background-color:#f9f9f9;
+	p {
+		text-align: center;
+		padding-top: 20px;
+	}
+
 	}
 
 #navbar {
 	/*padding-bottom: 20px;*/
-	background-color: #2C2C2C;
-	padding-top: 15px;
-	padding-bottom: 10px;
+	background-color: #DADADA;
+
+	padding-bottom: 15px;
 	color: $main-color;
 
 }
@@ -60,17 +67,33 @@ body {
 	padding-left: 15px;
 	font-size: 30px;
 	font-family: 'Comfortaa', sans-serif;
+
+	&:hover {
+		color: white;
+
+	}
+	#recycle {
+		display:inline-block;
+		position: relative;
+		top: 15px;
+
+		&:hover img{
+			-webkit-filter:brightness(100%);
+		}
+	}
+
 }
 
 #navMenu {
 	position: relative;
 	top: -15px;
 	text-align: right;
-	font-family: 'Open Sans', sans-serif;	
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
+	font-weight: 700;
 	li {
 		display: inline-block;
-		margin-right: 14px;
+		margin-right: 10px;
 		border-bottom: 1px solid $main-color;
 		padding-bottom: 5px;
 	}
@@ -83,8 +106,19 @@ body {
 	}
 }
 
+#map-wrap {
+	height: 450px;
+	padding-top: 50px;
+
+	h1 {
+		font-family: 'Comfortaa';
+		font-size:47pt;
+		text-align: center;
+	}
+}
 
 #map-canvas {
+	padding-top: 50px;
 	position: relative;
 	top: 30px;
 	border-radius: 7px;
@@ -94,7 +128,9 @@ body {
 }
 
 #mainWrapper {
-	margin: 15px 10px 0px 10px;
+	height: 100%;
+	margin: 0px;
+	background-color:#f9f9f9;
 	// margin-left: 10px;
 	// margin-right: 10px;
 

@@ -10,8 +10,12 @@
       </ul>
     </div>
   <% end %>
+  <br>
+  <div id=org-wrap>
  <%= collection_select(:location, :organization_id, Organization.all, :id, :name, prompt: true) %>
-<br/><br/>
+</div>
+<br>
+<div id="input-wrap">
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
@@ -31,8 +35,9 @@
     <%= f.label :zipcode %><br>
     <%= f.text_field :zipcode %>
   </div>
-
+<br>
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>
