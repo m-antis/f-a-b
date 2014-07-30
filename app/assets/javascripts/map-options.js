@@ -16,7 +16,10 @@ $(document).on('ready page:load', function(){
       zoomControlOptions: {
         position: google.maps.ControlPosition.DEFAULT
       },
-       styles: [
+       styles: 
+       
+// BEGIN MAP STYLING
+       [
     { "featureType": "landscape",
         "stylers": [
             {
@@ -133,6 +136,9 @@ $(document).on('ready page:load', function(){
         ]
     }
 ]
+
+
+// END MAP STYLING
     };
 
 }(window, google, window.Mapster || (window.Mapster = {})))

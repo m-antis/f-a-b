@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    @addresses = get_addresses
   end
 
   # GET /locations/1
@@ -73,5 +74,15 @@ class LocationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
       params.require(:location).permit(:address, :zipcode, :state, :city, :organization_id)
+    end
+
+    def get_addresses
+      locations = Location.all
+       a = []
+       # gather addresses from database into an array
+         for i in locations
+            a << "#{i.address}, #{i.zipcode}"
+         end
+         a
     end
 end

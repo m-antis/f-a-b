@@ -43,10 +43,25 @@ $(document).on('ready page:load', function(){
 // or take each address and zip code, join them into a string
 // do a loop where for each item in array, add a marker
 
-$mapster.mapster("addMarker", {
-	location: "1100-1104 Fulton Street, 11238"
-});
+// var addressMarker = function(){
+// var all_addresses = $("#address").html()
+var all_addresses = []
 
+    for ( n=0 ; n < 3 ; n++){
+        address = $("#address_"+n).html();
+        all_addresses.push(address);
+    }
+// loop through all address IDs, and grab the content
+
+
+    for (i=0; i<all_addresses.length ; i++){
+        var item = all_addresses[i];
+        $mapster.mapster("addMarker", {
+        	location: item
+        });
+
+        console.log(item);
+    };
 
 
 // below function adds a marker by address

@@ -1,3 +1,13 @@
 
 
-<div id="map-canvas"></div>
+	<div id="map-canvas"></div>
+
+<p class="addressArray">
+   <% i = 0 %>
+	<% @addresses.each do |a| %>
+
+		<%= "<div id='address_#{i}'>  #{a} </div>".html_safe %>
+      <% i += 1 %>
+	<% end %>
+
+</p>
