@@ -13,6 +13,6 @@
 #
 
 class Location < ActiveRecord::Base
-  belongs_to :organization_id
+  belongs_to :organization
   validates_presence_of :address, :zipcode, :state, :city
 end

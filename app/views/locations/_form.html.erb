@@ -10,11 +10,8 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :organization_id %><br>
-    <%= f.text_field :organization_id %>
-  </div>
-
+ <%= collection_select(:location, :organization_id, Organization.all, :id, :name, prompt: true) %>
+<br/><br/>
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
@@ -34,7 +31,7 @@
     <%= f.label :zipcode %><br>
     <%= f.text_field :zipcode %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>

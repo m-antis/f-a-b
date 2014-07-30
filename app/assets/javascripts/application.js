@@ -37,6 +37,18 @@ $(document).on('ready page:load', function(){
 	 	org_id: 2
  	});
 
+// below function for adding markers to all addresses in database
+
+// gather all addresses and zip code and push into array of hashes
+// or take each address and zip code, join them into a string
+// do a loop where for each item in array, add a marker
+
+$mapster.mapster("addMarker", {
+	location: "1100-1104 Fulton Street, 11238"
+});
+
+
+
 // below function adds a marker by address
 
 $mapster.mapster("addMarker", {
@@ -52,31 +64,6 @@ $mapster.mapster("addMarker", {
 	// });
 
 
-	// function geocode(opts) {
-	// 	geocoder.geocode({
-	// 		address: opts.address
-	// 	}, function(results, status) {
-	// 		if (status === google.maps.GeocoderStatus.OK) {
-	// 			opts.success.call(this, results, status);
-	// 		} else {
-	// 			opts.error.call( this, status);
-	// 		}
-	// 	});		
-	// }
-
-	// geocode({
-	// 	address: "Brooklyn Bridge, NY",
-	// 	success: function(results) {
-	// 		var result = results[0];
-	// 		$mapster.mapster('addMarker', {
-	// 			lat: result.geometry.location.lat(),
-	// 			lng: result.geometry.location.lng(),
-	// 		})
-	// 	},
-	// 	error: function(status) {
-	// 		console.error(status);
-	// 	}
-	// })
  	// below code using javascript only
     // // map options
     // var options = mapster.MAP_OPTIONS,
