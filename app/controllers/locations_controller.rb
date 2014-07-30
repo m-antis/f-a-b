@@ -5,7 +5,12 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
-    @addresses = get_addresses
+    @addressAmt = Location.all.length
+    # @addressMarkers = addressMarkers
+    @fullAddress = getFullAddress
+    @orgName = getOrgName
+    @orgID = getOrgID
+
   end
 
   # GET /locations/1
@@ -76,13 +81,40 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:address, :zipcode, :state, :city, :organization_id)
     end
 
-    def get_addresses
+    # def addressMarkers
+    #   locations = Location.all
+    #    a = []
+    #    # gather addresses from database into an array
+    #      for i in locations
+    #         a << "#{i.address}, #{i.zipcode}"
+    #      end
+    #      a
+    # end
+
+    def getFullAddress
       locations = Location.all
-       a = []
-       # gather addresses from database into an array
-         for i in locations
-            a << "#{i.address}, #{i.zipcode}"
-         end
-         a
+      a = []
+        for i in locations
+          a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode} "
+        end
+        a
+    end
+
+    def getOrgName
+      locations = Location.all
+      n = []
+        for i in locations
+          n << "#{i.organization.name}"
+        end
+        n
+    end
+
+    def getOrgID
+      locations = Location.all
+      id = []
+        for i in locations
+          id<< "#{i.organization_id}"
+        end
+        id
     end
 end

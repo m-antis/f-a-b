@@ -2,12 +2,35 @@
 
 	<div id="map-canvas"></div>
 
-<p class="addressArray">
-   <% i = 0 %>
-	<% @addresses.each do |a| %>
+<div id="mapContent">
 
-		<%= "<div id='address_#{i}'>  #{a} </div>".html_safe %>
-      <% i += 1 %>
-	<% end %>
+	<div id="addressAmt"> <%= @addressAmt %> </div>
 
-</p>
+	<div id="mapInfo">
+		<% x = 0 %>
+		<% @fullAddress.each do |m| %>
+			<%= "<div id='fullAddress_#{x}'> #{m} </div>".html_safe %>
+			<% x += 1 %>
+			
+		<% end %>
+	</div>
+
+	<div id="locationOrgName">
+		<% i = 0 %>
+		<% @orgName.each do |n| %>
+			<%="<div id='orgName_#{i}'> #{n} </div>".html_safe %>
+			<% i += 1 %>
+		<% end %>
+	</div>
+
+
+	<div id="orgID">
+		<% i = 0 %>
+		<% @orgID.each do |n| %>
+			<%="<div id='orgID_#{i}'> #{n} </div>".html_safe %>
+			<% i += 1 %>
+		<% end %>
+	</div>
+
+
+</div>

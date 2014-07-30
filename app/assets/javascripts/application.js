@@ -30,45 +30,64 @@ $(document).on('ready page:load', function(){
   //   	org_id: 1
  	// });
 
- 	$mapster.mapster('addMarker', {
-	 	lat: 40.715225,
-	 	lng: -73.9932579,
-	 	content: "marker2",
-	 	org_id: 2
- 	});
+ 	// $mapster.mapster('addMarker', {
+	 // 	lat: 40.715225,
+	 // 	lng: -73.9932579,
+	 // 	content: "marker2",
+	 // 	org_id: 2
+ 	// });
 
 // below function for adding markers to all addresses in database
 
-// gather all addresses and zip code and push into array of hashes
-// or take each address and zip code, join them into a string
-// do a loop where for each item in array, add a marker
-
-// var addressMarker = function(){
-// var all_addresses = $("#address").html()
-var all_addresses = []
-
-    for ( n=0 ; n < 3 ; n++){
-        address = $("#address_"+n).html();
-        all_addresses.push(address);
+// var all_addresses = []
+var orgNames = []
+var addressAmt = parseInt($("#addressAmt").html())
+var fullAddresses = []
+// var orgIDs = []
+    // push all full addresses that have the ID #fullAddress_ into the array fullAddress
+    for (a=0 ; a < addressAmt ; a++){
+        fullAddress = $("#fullAddress_"+a).html();
+        fullAddresses.push(fullAddress);
     }
-// loop through all address IDs, and grab the content
 
+    // push org names into array
+    for (n=0 ; n < addressAmt ; n++){
+        orgName = $("#orgName_"+n).html();
+        orgNames.push(orgName);
+    }
 
-    for (i=0; i<all_addresses.length ; i++){
-        var item = all_addresses[i];
-        $mapster.mapster("addMarker", {
-        	location: item
-        });
+    // push org IDs into array
+    // for (i=0 ; i < addressAmt ; i++){
+    //     orgID = $("#orgID_"+i).html();
+    //     orgIDs.push(orgID);
+    // }
+    // push each address in the div with address ID into the all_addresses variable
+    // for ( n=0 ; n < addressAmt ; n++){
+    //     address = $("#address_"+n).html();
+    //     all_addresses.push(address);
+    // }
 
-        console.log(item);
+    // addMarker to each address in the array all_addresses
+    for (i=0; i< fullAddresses.length ; i++){
+        for (n=0; n< fullAddresses.length ; n++){
+            var org = orgNames[n];
+            var address = fullAddresses[i];
+            var infoBox = org + address 
+            $mapster.mapster("addMarker", {
+            	location: address,
+                content: infoBox,
+                org_name: org
+            });
+        };
+        // console.log(org);
     };
 
 
 // below function adds a marker by address
 
-$mapster.mapster("addMarker", {
-	location: "Brooklyn Bridge, NY"
-});
+// $mapster.mapster("addMarker", {
+// 	location: "Brooklyn Bridge, NY"
+// });
 
 // below function adds a marker by current geolocation
 	// $mapster.mapster('getCurrentPosition', function(position) {
@@ -117,71 +136,6 @@ $mapster.mapster("addMarker", {
     // console.log(found);
 
   }(window, jQuery));
-
-
-
-// function getLocation() {
-//     getAddressInfoByZip(document.forms[0].zip.value);
-// }
-
-// function response(obj) {
-//     console.log(obj);
-// }
-
-// function getAddressInfoByZip(zip) {
-// if (zip.length >= 5 && typeof google != 'undefined') {
-//     var addr = {};
-//     var geocoder = new google.maps.Geocoder();
-//     geocoder.geocode({
-//         'address': zip
-//     }, function(results, status) {
-//         if (status == google.maps.GeocoderStatus.OK) {
-//             if (results.length >= 1) {
-//                 for (var ii = 0; ii < results[0].address_components.length; ii++) {
-//                     var street_number = route = street = city = state = zipcode = country = formatted_address = '';
-//                     var types = results[0].address_components[ii].types.join(",");
-//                     if (types == "street_number") {
-//                         addr.street_number = results[0].address_components[ii].long_name;
-//                     }
-//                     if (types == "route" || types == "point_of_interest,establishment") {
-//                         addr.route = results[0].address_components[ii].long_name;
-//                     }
-//                     if (types == "sublocality,political" || types == "locality,political" || types == "neighborhood,political" || types == "administrative_area_level_3,political") {
-//                         addr.city = (city == '' || types == "locality,political") ? results[0].address_components[ii].long_name : city;
-//                     }
-//                     if (types == "administrative_area_level_1,political") {
-//                         addr.state = results[0].address_components[ii].short_name;
-//                     }
-//                     if (types == "postal_code" || types == "postal_code_prefix,postal_code") {
-//                         addr.zipcode = results[0].address_components[ii].long_name;
-//                     }
-//                     if (types == "country,political") {
-//                         addr.country = results[0].address_components[ii].long_name;
-//                     }
-//                 }
-//                 addr.success = true;
-//                 for (name in addr) {
-//                     console.log('### google maps api ### ' + name + ': ' + addr[name]);
-//                 }
-//                 response(addr);
-//             } else {
-//                 response({
-//                     success: false
-//                 });
-//             }
-//         } else {
-//             response({
-//                 success: false
-//             });
-//         }
-//     });
-// } else {
-//     response({
-//         success: false
-//     });
-// }
-// }
-
 
 
 });
