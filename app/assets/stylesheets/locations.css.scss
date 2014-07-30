@@ -5,7 +5,16 @@
 #form-wrap {
    padding-top: 40px;
    width: 400px;
-   margin: 0 auto;
+   margin: 45px auto 0 auto;
+   padding-bottom: 45px;
+   border-radius: 5px;
+   border: 1px solid gray;
+
+   a {
+   display: inline-block;
+   padding-top: 15px;
+   padding-left: 75px;
+   }
 
    #org-wrap {
       padding-left:75px;
@@ -18,8 +27,20 @@ h1 {
    text-align: center;
 }
    input {
+      border:none;
+      border-radius: 3px;
+      border: 1px solid #ccc;
       width: 250px;
       height: 20px;
       font-size: 12pt;
+
+      &[type=submit] {
+         padding-top: 20px;
+         color: white;
+         border: none;
+         background-color: #3AAC34;
+         line-height:0px;
+         padding-bottom: 20px;
+      }
    }
 }
