@@ -23,13 +23,28 @@ $(document).on('ready page:load', function(){
  	var $mapster = $("#map-canvas").mapster(Mapster.MAP_OPTIONS);
 	 		// geocoder = new google.maps.Geocoder();
 
- 	// $mapster.mapster('addMarker', {
-  //   	lat: 40.708036,
-  //   	lng: -74.006261,
-  //   	content: "huzzah!",
-  //   	org_id: 1
- 	// });
+// var clickBox = document.getElementById("box");
 
+// clickBox.addEventListener("click", function() {
+//     $mapster.mapster("removeMarkers", {
+//         lat: 40.592733,
+//         lng: -73.940786
+//     });
+// }, false)
+
+
+ 	$mapster.mapster('addMarker', {
+    	lat: 40.708036,
+    	lng: -74.006261,
+    	content: "huzzah!",
+    	org_id: 1
+ 	});
+$("#box").click(function(){
+    // $mapster.toggle();
+    $mapster.mapster('removeMarkers', function(marker){
+        return marker.org_id ===1;
+    });
+})
  	// $mapster.mapster('addMarker', {
 	 // 	lat: 40.715225,
 	 // 	lng: -73.9932579,
@@ -39,7 +54,6 @@ $(document).on('ready page:load', function(){
 
 // below function for adding markers to all addresses in database
 
-// var all_addresses = []
 var orgNames = []
 var addressAmt = parseInt($("#addressAmt").html())
 var fullAddresses = []

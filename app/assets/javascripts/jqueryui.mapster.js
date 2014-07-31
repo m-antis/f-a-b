@@ -5,7 +5,9 @@ $(document).on('ready page:load', function(){
 	    // "colorize" the widget name
 	    $.widget( "mapster.mapster", {
 	      // default options
-	      options: { },
+	      options: { 
+// defaults go here
+	      },
 	 
 	      // the constructor
 	      _create: function() {
