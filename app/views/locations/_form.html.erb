@@ -11,9 +11,11 @@
     </div>
   <% end %>
   <br>
-  <div id=org-wrap>
+  
+  <div id="org-wrap">
  <%= collection_select(:location, :organization_id, Organization.all, :id, :name, prompt: true) %>
 </div>
+
 <br>
 <div id="input-wrap">
   <div class="field">

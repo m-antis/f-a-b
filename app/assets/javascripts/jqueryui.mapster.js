@@ -22,24 +22,26 @@ $(document).on('ready page:load', function(){
 	      // a public method to change the color to a random value
 	      // can be called directly via .colorize( "random" )	 
 	 		addMarker: function(opts) {
-	 			var self = this;
-	 			if (opts.location) {
-	 				this.map.geocode({
-	 					address: opts.location,
-	 					success: function(results) {
-	 						results.forEach(function(result) {
-	 							opts.lat = result.geometry.location.lat();
-	 							opts.lng = result.geometry.location.lng();
-	 							self.map.addMarker(opts);
-	 						});
-	 					},
-	 					error: function(status) {
-	 						console.error(status)
-	 					}
-	 				});
-	 			} else {
+
+	 			// geocoding
+	 			// var self = this;
+	 			// if (opts.location) {
+	 			// 	this.map.geocode({
+	 			// 		address: opts.location,
+	 			// 		success: function(results) {
+	 			// 			results.forEach(function(result) {
+	 			// 				opts.lat = result.geometry.location.lat();
+	 			// 				opts.lng = result.geometry.location.lng();
+	 			// 				self.map.addMarker(opts);
+	 			// 			});
+	 			// 		},
+	 			// 		error: function(status) {
+	 			// 			console.error(status)
+	 			// 		}
+	 			// 	});
+	 			// } else {
 	 				this.map.addMarker(opts);
-	 			}
+	 			// }
 	 		},
 	 		findMarkers: function(callback) {
 	 			return this.map.findBy(callback);
@@ -51,6 +53,10 @@ $(document).on('ready page:load', function(){
 
 	 		getCurrentPosition: function(callback) {
 	 			this.map.getCurrentPosition(callback);
+	 		},
+
+	 		markers: function() {
+	 			return this.map.markers.items;
 	 		},
 	      // events bound via _on are removed automatically
 	      // revert other modifications here
