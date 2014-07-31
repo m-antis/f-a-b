@@ -62,29 +62,38 @@ body {
 }
 
 #navLogo {
+	margin-left: 20px;
+	width:195px;
+	height:55px;
 	position: relative;
-	top: 7px;
-	padding-left: 15px;
+	top: 10px;
+	padding-left: 0px;
 	font-size: 30px;
 	font-family: 'Comfortaa', sans-serif;
 
 	&:hover {
-		color: white;
+	-webkit-filter: brightness(200);
 
+		img {
+			-webkit-filter: brightness(200);
+
+		}
 	}
 	#recycle {
 		display:inline-block;
 		position: relative;
 		top: 15px;
 
-		&:hover img{
-			-webkit-filter:brightness(100%);
-		}
+	/* 	&:hover img{
+		-webkit-filter: brightness(200);
+	} */
 	}
 
 }
 
 #navMenu {
+	float: right;
+	width: 500px;
 	position: relative;
 	top: -15px;
 	text-align: right;
@@ -134,12 +143,6 @@ body {
 	// margin-left: 10px;
 	// margin-right: 10px;
 
-	#form-wrap a {
-		display: inline-block;
-		padding-top: 15px;
-		padding-left: 75px;
-	}
-
 }
 
 #missionWrapper {
@@ -157,7 +160,6 @@ body {
 	}
 }
 
-
-#mapContent {
-	display: none;
+#addressArray {
+	margin-top: 50px;
 }

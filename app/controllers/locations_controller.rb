@@ -104,7 +104,7 @@ class LocationsController < ApplicationController
       locations = Location.all
       n = []
         for i in locations
-          n << "#{i.organization.name}"
+          n << "#{i.organization}"
         end
         n
     end
