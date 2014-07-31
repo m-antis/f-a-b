@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Find-A-Bin</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-<link href='http://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans' rel='stylesheet' type='text/css'>
+   <title>Find-A-Bin</title>
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= csrf_meta_tags %>
+   <%= favicon_link_tag 'recycling_outline.png' %>
+   <link href='http://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans' rel='stylesheet' type='text/css'>
 
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 </head>
 <body>
-<div class="wrapper">
-	<div id="navbar">
-      <div id="navLogo">Find&nbsp;-<div id="recycle"><%= image_tag 'recycling_outline.png' %></div>-&nbsp;Bin</div>
+   <div class="wrapper">
+      <div id="navbar">
+         <div id="navLogo"><a href='/locations'>Find&nbsp;-<div id="recycle"><%= image_tag 'recycling_outline.png' %></div>-&nbsp;Bin</a></div>
 
-		<ul id="navMenu">
-			<li><%= link_to 'Mission', mission_path %></li>
-			<li><%= link_to 'Locations', root_path %></li>
-			<li><%= link_to 'Contact', contact_path %></li>
-			<li><%= link_to 'Add Bin Location', new_location_path %></li>
-			<li> <%= link_to 'Add New Org', new_organization_path %></li>
-		</ul>
+         <ul id="navMenu">
+            <li><%= link_to 'Mission', mission_path %></li>
+            <li><%= link_to 'Locations', root_path %></li>
+            <li><%= link_to 'Contact', contact_path %></li>
+            <li><%= link_to 'Add Bin Location', new_location_path %></li>
+            <li> <%= link_to 'Add New Org', new_organization_path %></li>
+         </ul>
+
 
 	</div>
     <noscript><b>JavaScript must be enabled in order for you to use Google Maps.</b> 
@@ -34,14 +36,14 @@
 <div id="mainWrapper">
 	<%= yield %>
 
-</div>
-<div class="push"></div>
-</div>
+      </div>
+      <div class="push"></div>
+   </div>
 
-<div class="footer">
+   <div class="footer">
 
-<p>&copy; 2014 Find A Bin, LLC</p>
+      <p>&copy; 2014 Find A Bin, LLC</p>
 
-</div>
+   </div>
 </body>
 </html>
