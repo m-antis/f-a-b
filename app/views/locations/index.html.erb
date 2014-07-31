@@ -4,18 +4,62 @@
 	<div id="map-canvas"></div>
 </div>
 
-<div id="mapContent">
+
+
+<div id="filter">
+	<span class="label">
+		<input type="checkbox" name="goodwill" value="goodwill" id="box"/>Goodwill</span>
+		<br/>
+	<span class="label">
+		<input type="checkbox" name="sArmy" value="sArmy" id="box"/>Salvation Army</span>
+		<br/>
+	<span class="label">
+		<input type="checkbox" name="afterhours" value="after_hours" />After Hours/Walk-In Care</span>
+<br>
+
+</div>
+
+
+
+<div id="hiddenMapContent">
 
 <ul>
 	<li>
 	<div id="addressAmt"> <% @addressAmt %> </div>
 
 	<div id="mapInfo">
+	<h1> full addresses</h1>
 		<% x = 0 %>
 		<% @fullAddress.each do |m| %>
 			<%= "<div id='fullAddress_#{x}'> #{m} </div>".html_safe %>
 			<% x += 1 %>
 		<% end %>
+	</div>
+<br/>
+		<div id="markerLats">
+		<h1> marker latitudes </h1>
+		<% x = 0 %>
+		<% @mapLats.each do |lat| %>
+			<%= "<div id='latitude_#{x}'> #{lat} </div>".html_safe %>
+			<% x += 1 %>
+
+		<% end %>
+	</div>
+<br/>
+
+	<div id="markerLngs">
+	<h1> marker longitudes </h1>
+		<% x = 0 %>
+		<% @mapLngs.each do |lng| %>
+			<%= "<div id='longitude_#{x}'> #{lng} </div>".html_safe %>
+			<% x += 1 %>
+
+		<% end %>
+	</div>
+<br/>
+
+	<div id="locationOrgName">
+	<h1> org names </h1>
 		<% i = 0 %>
 		<div id="locationOrgName">
 		<% @orgName.each do |n| %>
@@ -25,11 +69,15 @@
 	</div>
 	</div>
 
-
-
-
-
-
+<br/>
+	<div id="orgID">
+	<h1> org ID </h1>
+		<% i = 0 %>
+		<% @orgID.each do |n| %>
+			<%="<div id='orgID_#{i}'> #{n} </div>".html_safe %>
+			<% i += 1 %>
+		<% end %>
+	</div>
 	<div id="orgID">
 	</li>
 </ul>

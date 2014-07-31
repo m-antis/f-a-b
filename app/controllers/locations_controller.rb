@@ -10,7 +10,9 @@ class LocationsController < ApplicationController
     @fullAddress = getFullAddress
     @orgName = getOrgName
     @orgID = getOrgID
-
+    # @mapInfo = getLocationInfo
+    @mapLats = getLatitudes
+    @mapLngs = getLongitudes
   end
 
   # GET /locations/1
@@ -91,13 +93,35 @@ class LocationsController < ApplicationController
     #      a
     # end
 
-    def getFullAddress
+    # def getLocationInfo
+    #   locations = Location.all
+    #   a = []
+    #     for i in locations
+    #       a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode}"
+    #       a << "#{i.organization.name}"
+    #     end
+    #   locationInfo = []
+    #     a.each_slice(2) do |value|
+    #       locationInfo << {address: value[0], orgName: value[1]}
+    #     end
+    #     locationInfo
+    # end
+    def getLatitudes
       locations = Location.all
-      a = []
+      n = []
         for i in locations
-          a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode} "
+          n << "#{i.latitude}"
         end
-        a
+        n
+    end
+
+    def getLongitudes
+      locations = Location.all
+      n = []
+        for i in locations
+          n << "#{i.longitude}"
+        end
+        n
     end
 
     def getOrgName

@@ -19,17 +19,32 @@
 $(document).on('ready page:load', function(){
 
  (function(window, $) {
-
+    // var locIndex;
  	var $mapster = $("#map-canvas").mapster(Mapster.MAP_OPTIONS);
-	 		geocoder = new google.maps.Geocoder();
+	 		// geocoder = new google.maps.Geocoder();
 
- 	// $mapster.mapster('addMarker', {
-  //   	lat: 40.708036,
-  //   	lng: -74.006261,
-  //   	content: "huzzah!",
-  //   	org_id: 1
- 	// });
+// var clickBox = document.getElementById("box");
 
+// clickBox.addEventListener("click", function() {
+//     $mapster.mapster("removeMarkers", {
+//         lat: 40.592733,
+//         lng: -73.940786
+//     });
+// }, false)
+
+
+ 	$mapster.mapster('addMarker', {
+    	lat: 40.708036,
+    	lng: -74.006261,
+    	content: "huzzah!",
+    	org_id: 1
+ 	});
+$("#box").click(function(){
+    // $mapster.toggle();
+    $mapster.mapster('removeMarkers', function(marker){
+        return marker.org_id ===1;
+    });
+})
  	// $mapster.mapster('addMarker', {
 	 // 	lat: 40.715225,
 	 // 	lng: -73.9932579,
@@ -39,11 +54,23 @@ $(document).on('ready page:load', function(){
 
 // below function for adding markers to all addresses in database
 
-// var all_addresses = []
 var orgNames = []
 var addressAmt = parseInt($("#addressAmt").html())
 var fullAddresses = []
+var allLats = []
+var allLngs = []
 // var orgIDs = []
+
+// push latitudes and longitudes into an array
+    for (n=0 ; n < addressAmt ; n++){
+        lat = parseFloat($("#latitude_"+n).html());
+        allLats.push(lat);
+    }
+
+       for (n=0 ; n < addressAmt ; n++){
+        lng = parseFloat($("#longitude_"+n).html());
+        allLngs.push(lng);
+    }
     // push all full addresses that have the ID #fullAddress_ into the array fullAddress
     for (a=0 ; a < addressAmt ; a++){
         fullAddress = $("#fullAddress_"+a).html();
@@ -61,33 +88,54 @@ var fullAddresses = []
     //     orgID = $("#orgID_"+i).html();
     //     orgIDs.push(orgID);
     // }
-    // push each address in the div with address ID into the all_addresses variable
-    // for ( n=0 ; n < addressAmt ; n++){
-    //     address = $("#address_"+n).html();
-    //     all_addresses.push(address);
-    // }
+
 
     // addMarker to each address in the array all_addresses
-    for (i=0; i< fullAddresses.length ; i++){
-        for (n=0; n< fullAddresses.length ; n++){
-            var org = orgNames[n];
+    for (i=0; i< allLngs.length ; i++){
+    // for (i=0; i< 4 ; i++){
+    //     for (n=0; n< 4 ; n++){
+            var org = orgNames[i];
             var address = fullAddresses[i];
-            var infoBox = org + address 
+            var infoBox = org + address;
+            var lat = allLats[i];
+            var lng = allLngs[i]
             $mapster.mapster("addMarker", {
-            	location: address,
+            	// location: address,
+                lat: lat,
+                lng: lng,
                 content: infoBox,
                 org_name: org
             });
         };
         // console.log(org);
-    };
 
+ 
+        // function doFilter() {
+        //     if(!locIndex){
+        //         locIndex = {};
+        //         for( x=0 ; x < fullAddresses.length; x++) {
+        //             locIndex[fullAddresses[x].locid] = x;
+        //         }
+        //     }
+        //     var checked = $("input[type=checkbox]:checked");
+        //     var selTypes = [];
+        //     for (i=0 ; i < checked.length ; i++) {
+        //         selTypes.push($(checked[i]).val());
+        //     }
+        //     for( i=0 ; i < fullAddresses.length ; i++) {
+        //         var sideDom = "p.loc[fullAddresses-locid=" + (i+1) + "]";
+                
+        //         if(checked.length !== 0 && selTypes.indexOf(data[i].type) < 0) {
+        //             $(sideDom).hide();
+        //             this.markers[locIndex[i+1]].setVisible(false);
+        //         } else {
+        //             $(sideDom).show();
+        //             this.markers[locIndex[i+1]].setVisible(true);
+        //         }
+        //     }
+        // }
+        // $(document).on("click", "input[type=checkbox]", doFilter);
 
-// below function adds a marker by address
-
-// $mapster.mapster("addMarker", {
-// 	location: "Brooklyn Bridge, NY"
-// });
 
 // below function adds a marker by current geolocation
 	// $mapster.mapster('getCurrentPosition', function(position) {

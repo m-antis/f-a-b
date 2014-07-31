@@ -9,10 +9,9 @@ $(document).on('ready page:load', function(){
       },
 
       disableDefaultUI: false,
-      zoom:10,
+      zoom:12,
       minZoom:10,
       maxZoom:19,
-      geocoder: true,
       zoomControlOptions: {
         position: google.maps.ControlPosition.DEFAULT
       },

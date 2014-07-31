@@ -7,13 +7,20 @@ $(document).on('ready page:load', function(){
 			this.gMap = new google.maps.Map(element, opts);
 			this.markers = List.create();
 
-			if (opts.geocoder) {
-				this.geocoder = new google.maps.Geocoder();
-			}
+			// if (opts.geocoder) {
+			// 	this.geocoder = new google.maps.Geocoder();
+			// }
 
 
 		}
 		Mapster.prototype = {
+			zoom: function(level) {
+				if (level) {
+					this.gMap.getZoom(level);
+				} else {
+					return this.gMap.getZoom();
+				}
+			},
 			_on: function(opts) {
 				var self = this;
 				google.maps.event.addListener(opts.obj, opts.event, function(e){
@@ -22,17 +29,17 @@ $(document).on('ready page:load', function(){
 			},
 
 
-			geocode: function(opts) {
-				this.geocoder.geocode({
-					address: opts.address
-				}, function(results,status) {
-					if (status === google.maps.GeocoderStatus.OK) {
-						opts.success.call(this, results, status);
-					} else {
-						opts.error.call(this,status);
-					}
-				});
-			},
+			// geocode: function(opts) {
+			// 	this.geocoder.geocode({
+			// 		address: opts.address
+			// 	}, function(results,status) {
+			// 		if (status === google.maps.GeocoderStatus.OK) {
+			// 			opts.success.call(this, results, status);
+			// 		} else {
+			// 			opts.error.call(this,status);
+			// 		}
+			// 	});
+			// },
 
 			getCurrentPosition: function(callback) {
 				if (navigator.geolocation) {
@@ -71,6 +78,10 @@ $(document).on('ready page:load', function(){
 					})
 				}
 				return marker;
+			},
+
+			_addMarker: function(marker) {
+				this.markers.add(marker);
 			},
 			findBy: function(callback) {
 				return this.markers.find(callback);

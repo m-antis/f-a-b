@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729160730) do
+ActiveRecord::Schema.define(version: 20140731151627) do
 
   create_table "locations", force: true do |t|
     t.string   "address"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140729160730) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "organization_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "organizations", force: true do |t|
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140729160730) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["organization_id"], name: "index_users_on_organization_id"
