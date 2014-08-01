@@ -20,18 +20,24 @@ class Location < ActiveRecord::Base
 end
 
 
-    def getFullAddress
-      locations = Location.all
-      a = []
-        for i in locations
-          a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode} "
-        end
-        a
-    end
+ def getFullAddress
+   locations = Location.all
+   a = []
+     for i in locations
+       a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode} "
+     end
+     a
+ end
 
-    def address 
-		[address, city, state, zipcode].compact.join(', ')
-    end
+ def address 
+	[address, city, state, zipcode].compact.join(', ')
+ end
 
-
-    
+def get_organizations
+   organizations = Organization.all
+   o = []
+   for i in organizations
+      o << "#{i.name}"
+   end
+   o
+end

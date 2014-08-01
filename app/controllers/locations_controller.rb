@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
     @orgName = getOrgName
     @orgID = getOrgID
     # @mapInfo = getLocationInfo
+    @all_orgs = get_organizations
     @mapLats = getLatitudes
     @mapLngs = getLongitudes
   end

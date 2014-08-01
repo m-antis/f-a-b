@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20140731151627) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
   end
 
   add_index "users", ["organization_id"], name: "index_users_on_organization_id"

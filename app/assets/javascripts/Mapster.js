@@ -1,7 +1,7 @@
 $(document).on('ready page:load', function(){
 
   (function(window, google) {
-    
+
     var Mapster = (function() {
       function Mapster(element, opts) {
         this.gMap = new google.maps.Map(element, opts);
@@ -45,10 +45,10 @@ $(document).on('ready page:load', function(){
                   content: opts.content,
                   maxWidth: 170
                 });
-              
+
                 infoWindow.open(this.gMap, marker);
               }
-            })  
+            })
           }
           return marker;
         },
@@ -62,7 +62,7 @@ $(document).on('ready page:load', function(){
             marker.setMap(null);
           }
         },
-        
+
         findMarkerById: function(id) {
           var i = 0;
           for(; i < this.markers.length; i++) {
@@ -81,6 +81,7 @@ $(document).on('ready page:load', function(){
             var marker = this.markers[i];
             if (marker.id === id) {
               // return marker;
+              console.log(marker);
               marker.setVisible(false);
             }
 
@@ -109,13 +110,13 @@ $(document).on('ready page:load', function(){
       };
       return Mapster;
     }());
-    
+
     Mapster.create = function(element, opts) {
       return new Mapster(element, opts);
     };
-    
+
     window.Mapster = Mapster;
-    
+
   }(window, google));
 
 });

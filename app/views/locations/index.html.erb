@@ -5,7 +5,7 @@
 </div>
 
 
-
+<!--
 <div id="filter">
 	<span class="label">
 		<input type="checkbox" name="goodwill" value="goodwill" id="box2" checked="checked"/>Goodwill</span>
@@ -16,9 +16,15 @@
 
 <br/>
 
-</div>
 
+</div> -->
+<% x = 1 %>
+<% @all_orgs.each do |o| %>
 
+	<%= check_box("tag", :"box#{x}", {checked: true}) %>
+	<%= label_tag(:"box#{x}", "#{o}") %>
+	<% x += 1 %>
+<% end %>
 
 <div id="hiddenMapContent">
 

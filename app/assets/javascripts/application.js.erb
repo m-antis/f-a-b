@@ -86,33 +86,47 @@ var orgIDs = []
         };
 // code template:
     var found = map.findMarkerById(2);
-    
+
     console.log(found);
 
 // if ID is 2, hide markers
 
-var mark2 = document.getElementById("box2");
-  mark2.addEventListener("click", toggleMarkers2, false);
+var mark1 = document.getElementById("tag_box1");
+  mark1.addEventListener("click", toggleMarkers1, false);
 
 
-function toggleMarkers2() {
-  if (mark2.checked) {
-    $(map.showMarkerById(2));
+function toggleMarkers1() {
+  if (mark1.checked) {
+     alert("checked");
+    $(map.showMarkerById(1));
   } else {
-    $(map.hideMarkerById(2));
+     alert("unchecked")
+    $(map.hideMarkerById(1));
   }
 }
-
-var mark3 = document.getElementById("box3");
-  mark3.addEventListener("click", toggleMarkers3, false);
-
-function toggleMarkers3() {
-  if (mark3.checked) {
-    $(map.showMarkerById(3));
-  } else {
-    $(map.hideMarkerById(3));
-  }
-}
+//
+// var mark2 = document.getElementById("box2");
+//   mark2.addEventListener("click", toggleMarkers2, false);
+//
+//
+// function toggleMarkers2() {
+//   if (mark2.checked) {
+//     $(map.showMarkerById(2));
+//   } else {
+//     $(map.hideMarkerById(2));
+//   }
+// }
+//
+// var mark3 = document.getElementById("box3");
+//   mark3.addEventListener("click", toggleMarkers3, false);
+//
+// function toggleMarkers3() {
+//   if (mark3.checked) {
+//     $(map.showMarkerById(3));
+//   } else {
+//     $(map.hideMarkerById(3));
+//   }
+// }
 
 
 
