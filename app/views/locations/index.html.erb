@@ -22,6 +22,7 @@
 
 <div id="hiddenMapContent">
 
+
 	<div id="addressAmt"> <%= @addressAmt %> </div>
 
 	<div id="mapInfo">
@@ -30,7 +31,6 @@
 		<% @fullAddress.each do |m| %>
 			<%= "<div id='fullAddress_#{x}'> #{m} </div>".html_safe %>
 			<% x += 1 %>
-			
 		<% end %>
 	</div>
 <br/>
@@ -40,7 +40,7 @@
 		<% @mapLats.each do |lat| %>
 			<%= "<div id='latitude_#{x}'> #{lat} </div>".html_safe %>
 			<% x += 1 %>
-			
+
 		<% end %>
 	</div>
 <br/>
@@ -51,7 +51,7 @@
 		<% @mapLngs.each do |lng| %>
 			<%= "<div id='longitude_#{x}'> #{lng} </div>".html_safe %>
 			<% x += 1 %>
-			
+
 		<% end %>
 	</div>
 <br/>
@@ -74,6 +74,5 @@
 			<% i += 1 %>
 		<% end %>
 	</div>
-
 
 </div>

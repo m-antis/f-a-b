@@ -82,15 +82,19 @@ body {
 		padding-top: 20px;
 	}
 
-	}
+}
+
+.push {
+	padding-top: 100px;
+
+}
 
 #navbar {
-	/*padding-bottom: 20px;*/
 	background-color: #DADADA;
 	height: 80px;
 	padding-bottom: 15px;
 	color: $main-color;
-
+	border-bottom: 2px solid #EAEAEA;
 }
 
 #navLogo {
@@ -121,9 +125,9 @@ body {
 		position: relative;
 		top: 11.5px;
 
-	/* 	&:hover img{
-		-webkit-filter: brightness(200);
-	} */
+		&:hover img{
+			-webkit-filter: brightness(200);
+		}
 	}
 
 }
@@ -183,14 +187,29 @@ body {
 }
 
 #missionWrapper {
+	padding-top: 50px;
 	width: 500px;
 	margin: 0 auto;
 
+	hr {
+		border: 1px dashed #EAEAEA;
+	}
+
+	#our-mission {
+		margin-bottom: 20px;
+		#mission {
+			padding-bottom: 10px;
+			font-size: 20pt;
+
+		}
+	}
+
+
+
 	h2 {
 		font-size: 20px;
-		line-height: 24px;
-		font-weight: bold;
-		font-style: italic;
+/* 		line-height: 24px;
+ */		font-weight: bold;
 	}
 	p {
 		margin-bottom: 20px;
@@ -202,8 +221,21 @@ body {
 	display: none;
 }
 
-#filter {
-	width: 200px;
-	margin: 0 auto;
+#mapContent {
+
+	width: 350px;
+	margin-top: 20px;
+	margin-left: 419px;
+	 div{
+		padding: 5px 0px;
+
+	}
+
 }
 
+#filter {
+	padding-top: 10px;
+	width: 200px;
+
+	margin: 0 auto;
+}
