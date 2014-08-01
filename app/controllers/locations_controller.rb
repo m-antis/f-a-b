@@ -6,7 +6,6 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
     @addressAmt = Location.all.length
-    # @addressMarkers = addressMarkers
     @fullAddress = getFullAddress
     @orgName = getOrgName
     @orgID = getOrgID
@@ -83,29 +82,6 @@ class LocationsController < ApplicationController
       params.require(:location).permit(:address, :zipcode, :state, :city, :organization_id)
     end
 
-    # def addressMarkers
-    #   locations = Location.all
-    #    a = []
-    #    # gather addresses from database into an array
-    #      for i in locations
-    #         a << "#{i.address}, #{i.zipcode}"
-    #      end
-    #      a
-    # end
-
-    # def getLocationInfo
-    #   locations = Location.all
-    #   a = []
-    #     for i in locations 
-    #       a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode}"
-    #       a << "#{i.organization.name}"
-    #     end
-    #   locationInfo = []
-    #     a.each_slice(2) do |value|
-    #       locationInfo << {address: value[0], orgName: value[1]}
-    #     end
-    #     locationInfo
-    # end
     def getLatitudes
       locations = Location.all
       n = []
@@ -128,7 +104,7 @@ class LocationsController < ApplicationController
       locations = Location.all
       n = []
         for i in locations
-          n << "#{i.organization}"
+          n << "#{i.organization.name}"
         end
         n
     end
