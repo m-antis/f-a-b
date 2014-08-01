@@ -27,7 +27,7 @@ $(document).on('ready page:load', function(){
 
 // below function for adding markers to all addresses in database
 
-var orgNames = []
+// var orgNames = []
 var addressAmt = parseInt($("#addressAmt").html())
 var fullAddresses = []
 var allLats = []
@@ -52,10 +52,10 @@ var orgIDs = []
     }
 
     // push org names into array
-    for (n=0 ; n < addressAmt ; n++){
-        orgName = $("#orgName_"+n).html();
-        orgNames.push(orgName);
-    }
+   //  for (n=0 ; n < addressAmt ; n++){
+   //      orgName = $("#orgName_"+n).html();
+   //      orgNames.push(orgName);
+   //  }
 
     // push org IDs into array
     for (i=0 ; i < addressAmt ; i++){
@@ -68,10 +68,10 @@ var orgIDs = []
     for (i=0; i< allLngs.length ; i++){
     // for (i=0; i< 4 ; i++){
     //     for (n=0; n< 4 ; n++){
-            var org = orgNames[i];
+            // var org = orgNames[i];
             var orgID = orgIDs[i];
             var address = fullAddresses[i];
-            var infoBox = org + address;
+            var infoBox = address;
             var lat = allLats[i];
             var lng = allLngs[i]
             map.addMarker({
@@ -79,9 +79,9 @@ var orgIDs = []
                 lat: lat,
                 lng: lng,
                 content: infoBox,
-                org_name: org,
+               //  org_name: org,
                 id: orgID,
-                icon: "<%= asset_path('hangerIcon.png') %>"
+               //  icon: "<%= asset_path('hangerIcon.png') %>"
             });
         };
 // code template:

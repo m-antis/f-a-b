@@ -18,14 +18,17 @@
 
 
 </div> -->
+
+<div id="org_selection">
+	<p>Locations for:</p>
 <% x = 1 %>
 <% @all_orgs.each do |o| %>
 
 	<%= check_box("tag", :"box#{x}", {checked: true}) %>
-	<%= label_tag(:"box#{x}", "#{o}") %>
+	<%= label_tag(:"box#{x}", "#{o}") %>&nbsp;&nbsp;
 	<% x += 1 %>
 <% end %>
-
+</div>
 <div id="hiddenMapContent">
 
 
