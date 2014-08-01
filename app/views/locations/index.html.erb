@@ -1,12 +1,18 @@
 
 <div id='map-wrap'>
 	<h1>Find a Bin Near You!</h1>
-	<div id="map-canvas"></div>
+	<div id="form-wrap">
+<h1 id="formTitle">Add New Bin Location</h1>
+<br/>
+
+<%= render 'form' %>
+
 </div>
+	<div id="map-canvas"></div>
 
 
+	<div id="filter">
 
-<div id="filter">
 	<span class="label">
 		<input type="checkbox" name="goodwill" value="goodwill" id="box2" checked="checked"/>Goodwill</span>
 		<br/>
@@ -17,7 +23,16 @@
 <br/>
 
 </div>
+</div>
 
+
+
+
+
+
+
+
+<!-- HIDDEN MAP MARKER INFORMATION. DO NOT TOUCH  -->
 
 
 <div id="hiddenMapContent">
@@ -76,3 +91,6 @@
 	</div>
 
 </div>
+
+
+<!-- END OF HIDDEN MAP CONTENT -->

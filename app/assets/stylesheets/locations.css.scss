@@ -3,15 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #form-wrap {
+   float:left;
    padding-top: 40px;
    width: 400px;
-   margin: 45px auto 0 auto;
+   margin: 25px auto 0 auto;
    padding-bottom: 45px;
    border-radius: 5px;
    border: 1px solid rgba(226, 226, 226, 0.64);
 
-   h1 {
-      font-size: 20pt;
+   #formTitle {
+      font-size: 12pt;
    }
 
    a {
