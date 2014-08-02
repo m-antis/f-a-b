@@ -99,7 +99,7 @@ body {
 
 #navLogo {
 
-	margin-left: 191px;
+	margin-left: 30px;
 	width:250px;
 	height:55px;
 	position: relative;
@@ -238,4 +238,8 @@ body {
 	width: 200px;
 	// text-align: center;
 	margin: 0 auto;
+
+	li {
+		margin: 7px;
+	}
 }

@@ -10,7 +10,8 @@ class OrganizationsController < ApplicationController
   		if @org.save
   			redirect_to new_location_path, notice: "New organization has been added."
   		else
-  			render :new
+	      flash[:alert] = "Org cannot be added. Please make sure to include an organization name."
+        redirect_to new_organization_path
   		end
   end
 

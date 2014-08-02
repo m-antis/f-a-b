@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
     @orgName = getOrgName
     @orgID = getOrgID
     # @mapInfo = getLocationInfo
+    @orgName = getEachOrg
     @mapLats = getLatitudes
     @mapLngs = getLongitudes
         @location = Location.new
@@ -34,14 +35,14 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
 
-    respond_to do |format|
-      if @location.save
-        format.html { redirect_to root_path, notice: 'Location was successfully created.' }
-        format.json { render :show, status: :created, location: @location }
-      else
-        format.html { render :new }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
+    if @location.save
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Location has been added!' }
+        format.js
       end
+    else
+      flash[:alert] = "Location cannot be added. Please make sure entire form is filled out."
+      redirect_to root_path
     end
   end
 

@@ -14,24 +14,30 @@
 
 class Location < ActiveRecord::Base
   belongs_to :organization
-  validates_presence_of :address, :zipcode, :state, :city
+  validates_presence_of :organization_id, :address, :zipcode, :state, :city
   geocoded_by :address
   after_validation :geocode #, if: ->(obj){ obj.address.present? and obj.address_changed? }
 end
 
 
-    def getFullAddress
-      locations = Location.all
-      a = []
-        for i in locations
-          a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode} "
-        end
-        a
-    end
+ def getFullAddress
+   locations = Location.all
+   a = []
+     for i in locations
+       a << "#{i.address} #{i.city}, #{i.state} #{i.zipcode} "
+     end
+     a
+ end
 
-    def address 
-		[address, city, state, zipcode].compact.join(', ')
-    end
+ def address 
+	[address, city, state, zipcode].compact.join(', ')
+ end
 
-
-    
+def getEachOrg
+   orgNames = Organization.all
+   orgs = []
+     for i in orgNames
+        orgs << "#{i.name}"
+     end
+     orgs
+end

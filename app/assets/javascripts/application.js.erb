@@ -34,34 +34,47 @@ var allLats = []
 var allLngs = []
 var orgIDs = []
 
-// push latitudes and longitudes into an array
+
     for (n=0 ; n < addressAmt ; n++){
         lat = parseFloat($("#latitude_"+n).html());
         allLats.push(lat);
-    }
-
-    for (n=0 ; n < addressAmt ; n++){
         lng = parseFloat($("#longitude_"+n).html());
         allLngs.push(lng);
-    }
-    console.log(allLngs)
-    // push all full addresses that have the ID #fullAddress_ into the array fullAddress
-    for (a=0 ; a < addressAmt ; a++){
-        fullAddress = $("#fullAddress_"+a).html();
+        fullAddress = $("#fullAddress_"+n).html();
         fullAddresses.push(fullAddress);
-    }
-
-    // push org names into array
-    for (n=0 ; n < addressAmt ; n++){
         orgName = $("#orgName_"+n).html();
         orgNames.push(orgName);
-    }
-
-    // push org IDs into array
-    for (i=0 ; i < addressAmt ; i++){
-        orgID = parseInt($("#orgID_"+i).html());
+        orgID = parseInt($("#orgID_"+n).html());
         orgIDs.push(orgID);
     }
+// push latitudes and longitudes into an array
+    // for (n=0 ; n < addressAmt ; n++){
+    //     lat = parseFloat($("#latitude_"+n).html());
+    //     allLats.push(lat);
+    // }
+
+    // for (n=0 ; n < addressAmt ; n++){
+    //     lng = parseFloat($("#longitude_"+n).html());
+    //     allLngs.push(lng);
+    // }
+
+    // // push all full addresses that have the ID #fullAddress_ into the array fullAddress
+    // for (a=0 ; a < addressAmt ; a++){
+    //     fullAddress = $("#fullAddress_"+a).html();
+    //     fullAddresses.push(fullAddress);
+    // }
+
+    // // push org names into array
+    // for (n=0 ; n < addressAmt ; n++){
+    //     orgName = $("#orgName_"+n).html();
+    //     orgNames.push(orgName);
+    // }
+
+    // // push org IDs into array
+    // for (i=0 ; i < addressAmt ; i++){
+    //     orgID = parseInt($("#orgID_"+i).html());
+    //     orgIDs.push(orgID);
+    // }
 
 
     // addMarker to each address in the array all_addresses
@@ -74,46 +87,98 @@ var orgIDs = []
             var infoBox = org + address;
             var lat = allLats[i];
             var lng = allLngs[i]
-            map.addMarker({
-            	// location: address,
-                lat: lat,
-                lng: lng,
-                content: infoBox,
-                org_name: org,
-                id: orgID,
-                icon: "<%= asset_path('hangerIcon.png') %>"
-            });
+
+            if (orgID === 7) {
+                map.addMarker({
+                	// location: address,
+                    lat: lat,
+                    lng: lng,
+                    content: infoBox,
+                    org_name: org,
+                    id: orgID,
+                    icon: "<%= asset_path('goodwill.png') %>"
+                });
+            } else if (orgID === 8) {
+                map.addMarker({
+                    // location: address,
+                    lat: lat,
+                    lng: lng,
+                    content: infoBox,
+                    org_name: org,
+                    id: orgID,
+                    icon: "<%= asset_path('salArmy.png') %>"
+                });
+            } else {
+                 map.addMarker({
+                    // location: address,
+                    lat: lat,
+                    lng: lng,
+                    content: infoBox,
+                    org_name: org,
+                    id: orgID,
+                    icon: "<%= asset_path('hangerIcon.png') %>"
+                });
+            }
+
+            // if (marker.id === 2) {
+            //     console.log(marker)
+            // }
         };
 // code template:
     var found = map.findMarkerById(2);
-    
+
     console.log(found);
 
 // if ID is 2, hide markers
 
-var mark2 = document.getElementById("box2");
+var mark1 = document.getElementById("tag_box1");
+  mark1.addEventListener("click", toggleMarkers1, false);
+
+
+function toggleMarkers1() {
+  if (mark1.checked) {
+     console.log("checked");
+    $(map.showMarkerById(6));
+  } else {
+     console.log("unchecked")
+    $(map.hideMarkerById(6));
+  }
+}
+
+var mark2 = document.getElementById("tag_box2");
   mark2.addEventListener("click", toggleMarkers2, false);
 
 
 function toggleMarkers2() {
   if (mark2.checked) {
-    $(map.showMarkerById(2));
+    $(map.showMarkerById(7));
   } else {
-    $(map.hideMarkerById(2));
+    $(map.hideMarkerById(7));
   }
 }
 
-var mark3 = document.getElementById("box3");
+var mark3 = document.getElementById("tag_box3");
   mark3.addEventListener("click", toggleMarkers3, false);
 
 function toggleMarkers3() {
   if (mark3.checked) {
-    $(map.showMarkerById(3));
+    $(map.showMarkerById(8));
   } else {
-    $(map.hideMarkerById(3));
+    $(map.hideMarkerById(8));
   }
 }
 
+
+var mark4 = document.getElementById("tag_box4");
+  mark4.addEventListener("click", toggleMarkers4, false);
+
+function toggleMarkers4() {
+  if (mark4.checked) {
+    $(map.showMarkerById(9));
+  } else {
+    $(map.hideMarkerById(9));
+  }
+}
 
 
 //     var marks = $mapster.mapster('markers')

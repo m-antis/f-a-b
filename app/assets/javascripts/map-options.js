@@ -4,13 +4,13 @@ $(document).on('ready page:load', function(){
 
 	mapster.MAP_OPTIONS = {
       center: {
-        lat: 40.708036,
-        lng: -74.006261
+        lat: 40.715876,
+        lng: -73.933043
       },
 
       disableDefaultUI: false,
       zoom:12,
-      minZoom:10,
+      minZoom:6,
       maxZoom:19,
       zoomControlOptions: {
         position: google.maps.ControlPosition.DEFAULT

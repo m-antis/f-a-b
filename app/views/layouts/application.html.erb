@@ -32,6 +32,11 @@
       To view Google Maps, enable JavaScript by changing your browser options, and then 
       try again.
     </noscript>
+
+      <% if notice %> <p id="notice" class="x"><%= notice %> </p> <% end %>
+   <% if alert %><p id="alert" class="x"><%= alert %></p> <% end %>
+   
+   
 <div id="mainWrapper">
 	<%= yield %>
 
