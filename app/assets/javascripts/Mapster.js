@@ -29,6 +29,8 @@ $(document).on('ready page:load', function(){
           }
           marker = this._createMarker(opts);
           this._addMarker(marker);
+
+          console.log("created")
           if (opts.event) {
             this._on({
               obj: marker,
@@ -107,7 +109,6 @@ $(document).on('ready page:load', function(){
         _createMarker: function(opts) {
           opts.map = this.gMap;
           return new google.maps.Marker(opts);
-          console.log(google.maps.Marker(opts))
         }
       };
       return Mapster;

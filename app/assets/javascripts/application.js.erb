@@ -84,9 +84,10 @@ var orgIDs = []
             var org = orgNames[i];
             var orgID = orgIDs[i];
             var address = fullAddresses[i];
-            var infoBox = org + address;
+            var infoBox = address;
             var lat = allLats[i];
             var lng = allLngs[i]
+
 
             if (orgID === 7) {
                 map.addMarker({
@@ -119,11 +120,7 @@ var orgIDs = []
                     icon: "<%= asset_path('hangerIcon.png') %>"
                 });
             }
-
-            // if (marker.id === 2) {
-            //     console.log(marker)
-            // }
-        };
+}
 // code template:
     var found = map.findMarkerById(2);
 

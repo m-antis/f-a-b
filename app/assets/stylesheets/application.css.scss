@@ -219,16 +219,16 @@ body {
 
 
 #hiddenMapContent {
-	display: none;
+	display:none;
 }
 
 #mapContent {
 	width: 350px;
 	margin-top: 20px;
 	margin-left: 419px;
+
 	 div{
 		padding: 5px 0px;
-
 	}
 
 }
@@ -243,3 +243,17 @@ body {
 		margin: 7px;
 	}
 }
+
+#org_selection {
+	padding-top: 20px;
+	width: 600px;
+	height: 75px;
+	margin: 0 auto;
+
+	p {
+		font-size:13pt;
+		display:inline-block;
+		margin-right: 10px;
+	}
+}
+
